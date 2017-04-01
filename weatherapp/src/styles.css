@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+    background-color: #ff823a; 
+    color: #FFF; 
+}
+
+button {
+    border-radius: 95px; 
+    background-color: #37a9ef;
+    color: #FFF; 
+    padding: 0.6%; 
+    font-size: 1.3rem; 
+}
+
+button:active {
+    background-color: #ff823a; 
+}
+
+.center {
+    text-align: center; 
+}

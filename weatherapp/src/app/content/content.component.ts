@@ -12,7 +12,7 @@ import 'rxjs/Rx';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private dataUrl = 'proxy server'; 
+  private dataUrl = 'proxyserver'; 
   private users; 
   constructor(private http: Http) { }
 
