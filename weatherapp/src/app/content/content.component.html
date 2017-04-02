@@ -1,5 +1,6 @@
 <button (click)="processData()">Get Weather</button>
 <div *ngIf="users">
-  {{users.currently.temperature}}<br>
+  <h2>Current Temperature</h2> {{users.currently.temperature}} &#8457;
+  <h2>Summary</h2> {{users.hourly.summary}}
 </div>
 
