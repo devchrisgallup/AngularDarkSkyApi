@@ -12,8 +12,10 @@ import 'rxjs/Rx';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private dataUrl = 'proxyserver'; 
+  private dataUrl = ''; 
   private users; 
+  private rainByTheMinute = false; 
+  private hourlyArray; 
   constructor(private http: Http) { }
 
   ngOnInit() {
@@ -22,6 +24,11 @@ export class ContentComponent implements OnInit {
   }
 
   processData() {
-    console.log(this.users); 
+    this.hourlyArray = this.users.hourly.data;  
+    if (!this.rainByTheMinute) {
+      this.rainByTheMinute = true; 
+    } else if(this.rainByTheMinute) {
+      this.rainByTheMinute = false; 
+    }
   }
 }
