@@ -12,7 +12,7 @@ import 'rxjs/Rx';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private dataUrl = ''; 
+  private dataUrl = 'http://chrisgalluptest.info/a/weather.php'; 
   private users; 
   private rainByTheMinute = false; 
   private hourlyArray; 

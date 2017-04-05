@@ -10,6 +10,8 @@ button {
     color: #FFF; 
     padding: 0.6%; 
     font-size: 1.3rem; 
+    border-color: #fff; 
+    border-width: 10px; 
 }
 
 button:active {
