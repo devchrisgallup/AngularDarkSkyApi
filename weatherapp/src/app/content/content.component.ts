@@ -12,8 +12,9 @@ import 'rxjs/Rx';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private dataUrl = ''; 
+  private dataUrl = 'proxy server with API key'; 
   private users; 
+  private isNoRain = false; 
   private rainByTheMinute = false; 
   private hourlyArray; 
   constructor(private http: Http) { }
@@ -24,11 +25,21 @@ export class ContentComponent implements OnInit {
   }
 
   processData() {
+    let counter = 0; 
     this.hourlyArray = this.users.hourly.data;  
     if (!this.rainByTheMinute) {
       this.rainByTheMinute = true; 
     } else if(this.rainByTheMinute) {
       this.rainByTheMinute = false; 
+    }
+
+    for (let i = 0; i < this.hourlyArray.length; i++) {
+      if (this.hourlyArray[i].precipProbability == 0) {
+        counter++; 
+      }
+    }
+    if (counter == this.hourlyArray.length) {
+      this.isNoRain = true; 
     }
   }
 }
