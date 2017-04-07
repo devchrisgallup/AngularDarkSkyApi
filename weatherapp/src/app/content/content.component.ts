@@ -12,7 +12,7 @@ import 'rxjs/Rx';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private dataUrl = 'http://chrisgalluptest.info/a/weather.php'; 
+  private dataUrl = 'proxy server with API key'; 
   private users; 
   private isNoRain = false; 
   private rainByTheMinute = false; 
