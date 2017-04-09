@@ -2,7 +2,12 @@
 <div *ngIf="users">
   <h2>Current Temperature</h2> {{users.currently.temperature}} &#8457;
   <h2>Summary</h2> {{users.hourly.summary}} <br>
-  <h2 *ngIf="users.alerts[0].title">Alerts</h2>{{users.alerts[0].title}}<br>{{users.alerts[0].severity}}
+  <div *ngIf="users.alerts; else NoAlerts"> 
+    <h2>Alerts</h2>{{users.alerts[0].title}}<br>{{users.alerts[0].severity}}
+  </div>
+  <ng-template #NoAlerts>
+        <h2>No Alerts at this time</h2>
+  </ng-template>
 </div>
 
 <div *ngIf="rainByTheMinute">

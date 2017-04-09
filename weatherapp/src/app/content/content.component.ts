@@ -12,7 +12,7 @@ import 'rxjs/Rx';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private dataUrl = 'proxy server with API key'; 
+  private dataUrl = 'Proxy Server with API key'; 
   private users; 
   private isNoRain = false; 
   private rainByTheMinute = false; 
@@ -38,6 +38,7 @@ export class ContentComponent implements OnInit {
         counter++; 
       }
     }
+
     if (counter == this.hourlyArray.length) {
       this.isNoRain = true; 
     }
