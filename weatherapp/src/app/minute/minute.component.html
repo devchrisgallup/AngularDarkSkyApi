@@ -1,0 +1,7 @@
+<button (click)="processData()">Get Weather by the minute</button>
+<div *ngIf="rainByTheMinute">
+  <h2>{{users.minutely.summary}}</h2>
+  <ul>
+    <li *ngFor="let data of minnutelyArray; let i = index">{{data.precipProbability}} &#37; chance of rain {{i + 1}} minute from now.</li>
+  </ul>
+</div>

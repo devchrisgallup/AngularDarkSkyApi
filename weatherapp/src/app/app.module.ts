@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
+import { MinuteComponent } from './minute/minute.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContentComponent
+    ContentComponent,
+    MinuteComponent
   ],
   imports: [
     BrowserModule,

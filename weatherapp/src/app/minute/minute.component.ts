@@ -7,40 +7,31 @@ import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  selector: 'app-minute',
+  templateUrl: './minute.component.html',
+  styleUrls: ['./minute.component.css']
 })
-export class ContentComponent implements OnInit {
-  private dataUrl = 'proxy server'; 
-  private users; 
-  private isNoRain = false; 
+export class MinuteComponent implements OnInit {
+  private dataUrl = 'proxy server';
   private rainByTheMinute = false; 
-  private hourlyArray; 
+  private minnutelyArray; 
+  private users;  
   constructor(private http: Http) { }
 
   ngOnInit() {
     this.http.get(this.dataUrl)
              .subscribe(data => this.users = data.json());
+ 
   }
 
   processData() {
-    let counter = 0; 
-    this.hourlyArray = this.users.hourly.data;  
+    this.minnutelyArray = this.users.minutely.data; 
+    console.log(this.minnutelyArray); 
     if (!this.rainByTheMinute) {
       this.rainByTheMinute = true; 
     } else if(this.rainByTheMinute) {
       this.rainByTheMinute = false; 
     }
-
-    for (let i = 0; i < this.hourlyArray.length; i++) {
-      if (this.hourlyArray[i].precipProbability == 0) {
-        counter++; 
-      }
-    }
-
-    if (counter == this.hourlyArray.length) {
-      this.isNoRain = true; 
-    }
   }
+
 }
