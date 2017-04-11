@@ -25,8 +25,9 @@ export class MinuteComponent implements OnInit {
   }
 
   processData() {
+    // weather by the minute array
     this.minnutelyArray = this.users.minutely.data; 
-    console.log(this.minnutelyArray); 
+    // flag to show div
     if (!this.rainByTheMinute) {
       this.rainByTheMinute = true; 
     } else if(this.rainByTheMinute) {
