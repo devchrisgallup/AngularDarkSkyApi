@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/Observable'; 
-
-import 'rxjs/add/operator/map';
-import 'rxjs/Rx';
+import { Http } from '@angular/http';
+import { TvService } from 'app/services/tv.service'; 
 
 @Component({
   selector: 'app-content',
@@ -12,16 +8,15 @@ import 'rxjs/Rx';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private dataUrl = 'proxy server'; 
   private users; 
   private isNoRain = false; 
   private rainByTheMinute = false; 
   private hourlyArray; 
-  constructor(private http: Http) { }
+  constructor(private service: TvService) { }
 
   ngOnInit() {
-    this.http.get(this.dataUrl)
-             .subscribe(data => this.users = data.json());
+    this.service.getData()
+                .subscribe(data => this.users = data);
   }
 
   processData() {
