@@ -12,7 +12,7 @@ import { MinuteComponent } from './minute/minute.component';
   declarations: [
     AppComponent,
     ContentComponent,
-    MinuteComponent
+    MinuteComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +20,7 @@ import { MinuteComponent } from './minute/minute.component';
     HttpModule
   ],
   providers: [
-    TvService
+    TvService,
   ],
   bootstrap: [AppComponent]
 })

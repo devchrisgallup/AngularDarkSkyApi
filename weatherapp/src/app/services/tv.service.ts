@@ -7,10 +7,13 @@ import 'rxjs/Rx';
 
 @Injectable() 
 export class TvService {
-    private dataUrl: string = 'Proxy Server';
-    constructor(private http: Http) {}
+    public dataUrl: string; 
+    constructor(private http: Http) {
+    }
+
     // get data
-    getData() {
+    getData(lat, long) {
+        this.dataUrl = 'proxeyserver?lat=' + lat + '&long=' + long;
         return this.http.get(this.dataUrl)
         .map(data => data.json());  
     }

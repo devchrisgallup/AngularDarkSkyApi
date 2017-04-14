@@ -8,15 +8,27 @@ import { TvService } from 'app/services/tv.service';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  private users; 
-  private isNoRain = false; 
-  private rainByTheMinute = false; 
-  private hourlyArray; 
+  public users; 
+  public isNoRain = false; 
+  public rainByTheMinute = false; 
+  public hourlyArray; 
+  public lat; 
+  public long; 
   constructor(private service: TvService) { }
 
+
   ngOnInit() {
-    this.service.getData()
-                .subscribe(data => this.users = data);
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+      }
+
+  }
+
+  setPosition(position) {
+      this.lat = position.coords.latitude; 
+      this.long = position.coords.longitude;
+      this.service.getData(this.lat, this.long)
+                  .subscribe(data => this.users = data);
   }
 
   processData() {

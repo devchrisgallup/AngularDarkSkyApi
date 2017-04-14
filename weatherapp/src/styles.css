@@ -33,3 +33,17 @@ button:active {
 .center {
     text-align: center; 
 }
+
+@media only screen and (max-width: 600px) {
+    ul li {
+        width: 100%; 
+        text-align: center; 
+    }   
+}
+
+@media only screen and (max-width: 1250px) {
+    ul li {
+        width: 100%; 
+        text-align: center; 
+    }   
+}
