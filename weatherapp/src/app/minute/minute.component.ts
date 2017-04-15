@@ -23,6 +23,9 @@ export class MinuteComponent implements OnInit {
   }
 
   setPosition(position) {
+      // pass latitude and longitude of device
+      // to build query string for call to 
+      // proxy server
       this.lat = position.coords.latitude; 
       this.long = position.coords.longitude; 
       this.service.getData(this.lat, this.long)

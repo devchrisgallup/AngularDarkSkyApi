@@ -10,7 +10,6 @@ export class TvService {
     public dataUrl: string; 
     constructor(private http: Http) {
     }
-
     // get data
     getData(lat, long) {
         this.dataUrl = 'proxeyserver?lat=' + lat + '&long=' + long;

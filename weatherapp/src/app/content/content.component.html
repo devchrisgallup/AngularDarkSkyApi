@@ -1,5 +1,3 @@
-{{lat}}
-{{long}}
 <button (click)="processData()">Show Rain Probability</button>
 <div *ngIf="users">
   <h2>Current Temperature</h2> {{users.currently.temperature}} &#8457;
@@ -14,7 +12,7 @@
 
 <div *ngIf="rainByTheMinute">
   <ul>
-    <li *ngFor="let hourly of hourlyArray; let i = index"><span *ngIf="hourly.precipProbability > 0; else nottraining">{{hourly.precipProbability * 100 | number: '1.0-0'}}&#37; of {{hourly.summary}} in {{i + 1}} hours from now.</span></li>
+    <li *ngFor="let hourly of hourlyArray; let i = index"><span *ngIf="hourly.precipProbability > 0; else nottraining">{{hourly.precipProbability * 100 | number: '1.0-0'}}&#37; of {{hourly.summary}} in {{i + 1}} hours.</span></li>
   </ul>
   <ng-template #nottraining>
   </ng-template>
