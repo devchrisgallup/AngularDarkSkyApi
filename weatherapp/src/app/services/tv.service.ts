@@ -12,7 +12,7 @@ export class TvService {
     }
     // get data
     getData(lat, long) {
-        this.dataUrl = 'proxyserver?lat=' + lat + '&long=' + long;
+        this.dataUrl = 'proxy.php?lat=' + lat + '&long=' + long;
         return this.http.get(this.dataUrl)
         .map(data => data.json());  
     }

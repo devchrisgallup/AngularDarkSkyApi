@@ -12,6 +12,7 @@ export class ContentComponent implements OnInit {
   public isNoRain = false; 
   public rainByTheMinute = false; 
   public hourlyArray; 
+  public weeklyArray; 
   public lat; 
   public long; 
   constructor(private service: TvService) { }
@@ -21,7 +22,6 @@ export class ContentComponent implements OnInit {
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
       }
-
   }
 
   setPosition(position) {
@@ -31,12 +31,15 @@ export class ContentComponent implements OnInit {
       this.lat = position.coords.latitude; 
       this.long = position.coords.longitude;
       this.service.getData(this.lat, this.long)
-                  .subscribe(data => this.users = data);
+                  .subscribe(data => this.users = data); 
   }
 
   processData() {
+    this.weeklyArray = this.users.daily.data; 
+    console.log(this.weeklyArray); 
     let counter = 0; 
-    this.hourlyArray = this.users.hourly.data;  
+    this.hourlyArray = this.users.hourly.data; 
+    // this.weekArray = this.users. 
     // flag to show div
     if (!this.rainByTheMinute) {
       this.rainByTheMinute = true; 
