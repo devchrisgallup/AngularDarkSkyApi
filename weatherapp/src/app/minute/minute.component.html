@@ -1,8 +1,8 @@
 <div *ngIf="!rainByTheMinute">
-  <button (click)="processData()">Show Weather by the minute</button>
+  <button (click)="processData()">Show 60 Minutes</button>
 </div>
 <div *ngIf="rainByTheMinute">
-  <button (click)="processData()">Hide Weather by the minute</button>
+  <button (click)="processData()">Hide 60 Minutes</button>
 </div>
 <div *ngIf="rainByTheMinute">
   <h2>{{users.minutely.summary}}</h2>
