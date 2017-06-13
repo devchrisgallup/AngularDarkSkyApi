@@ -6,6 +6,8 @@
 </div>
 <div *ngIf="users">
   <h2>Current Temperature</h2> {{users.currently.temperature}} &#8457;
+  <h2>High Temperature</h2> {{users.daily.data[0].temperatureMax}} &#8457;
+  <h2>Low Temperature</h2> {{users.daily.data[0].temperatureMin}} &#8457;
   <h4>Summary</h4> {{users.hourly.summary}} Wind speeds of {{users.currently.windSpeed}} MPH.
   <div *ngIf="users.alerts; else NoAlerts"> 
     <h2>Alerts</h2>{{users.alerts[0].title}}<br>{{users.alerts[0].severity}}

@@ -33,6 +33,7 @@ export class MinuteComponent implements OnInit {
   }
 
   processData() {
+    console.log(this.users.daily.data[0].temperatureMax); 
     // weather by the minute array
     this.minnutelyArray = this.users.minutely.data; 
     // flag to show div
