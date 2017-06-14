@@ -15,6 +15,10 @@ export class ContentComponent implements OnInit {
   public weeklyArray; 
   public lat; 
   public long; 
+  public dayDate; 
+  public monthDate; 
+  public yearDate; 
+  public getD = new Date();  
   constructor(private service: TvService) { }
 
 
@@ -22,6 +26,10 @@ export class ContentComponent implements OnInit {
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
       }
+    this.monthDate = this.getD.getMonth() + 1; 
+    this.dayDate = this.getD.getDate();
+    this.yearDate = this.getD.getFullYear(); 
+    
   }
 
   setPosition(position) {

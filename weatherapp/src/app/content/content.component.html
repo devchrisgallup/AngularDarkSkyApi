@@ -4,6 +4,7 @@
 <div *ngIf="rainByTheMinute">
   <button (click)="processData()">Hide Rain Probability</button>
 </div>
+<h1>{{monthDate}}/{{dayDate}}/{{yearDate}}</h1>
 <div *ngIf="users">
   <h2>Current Temperature</h2> {{users.currently.temperature}} &#8457;
   <h2>High Temperature</h2> {{users.daily.data[0].temperatureMax}} &#8457;
