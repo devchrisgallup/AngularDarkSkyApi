@@ -1,0 +1,9 @@
+.min ul li {
+    display: inline-block;
+    width: 10%; 
+}
+
+.center {
+    width: 100%; 
+    margin: 0 auto; 
+}

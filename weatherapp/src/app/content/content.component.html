@@ -21,9 +21,17 @@
 <div *ngIf="rainByTheMinute">
   <h2>8 Day Forecast</h2>
   <div class="leftAlign"> 
-  <span *ngFor="let week of weeklyArray; let i = index">Day{{i + 1}} Hi: {{week.temperatureMax}}&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
-  <span *ngFor="let week of weeklyArray; let i = index">Day{{i + 1}} Low: {{week.temperatureMin}}&nbsp;</span><br>
-  <span *ngFor="let week of weeklyArray; let i = index">Day{{i + 1}} Rain: {{week.precipProbability}}&nbsp;</span> 
+  <div class="center">
+    <div class="min">
+      <ul *ngFor="let week of weeklyArray; let i = index">
+        <li>Day{{i + 1}} Hi: {{week.temperatureMax}}</li>
+        <li>Low: {{week.temperatureMin}}</li>
+        <li>Rain: {{week.precipProbability}}</li><br>
+      </ul>
+    </div>
+  </div>
+  <!--<span *ngFor="let week of weeklyArray; let i = index">Day{{i + 1}} Low: {{week.temperatureMin}}&nbsp;</span><br>
+  <span *ngFor="let week of weeklyArray; let i = index">Day{{i + 1}} Rain: {{week.precipProbability}}&nbsp;</span> -->
   <ul>
     <li *ngFor="let hourly of hourlyArray; let i = index"><span *ngIf="hourly.precipProbability > 0; else nottraining">{{hourly.precipProbability * 100 | number: '1.0-0'}}&#37; of {{hourly.summary}} in {{i + 1}} hours.</span></li>
   </ul>
