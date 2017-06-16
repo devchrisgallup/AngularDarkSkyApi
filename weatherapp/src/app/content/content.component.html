@@ -10,8 +10,8 @@
   <h2>High Temperature</h2> {{users.daily.data[0].temperatureMax}} &#8457;
   <h2>Low Temperature</h2> {{users.daily.data[0].temperatureMin}} &#8457;
   <h4>Summary</h4> {{users.hourly.summary}} Wind speeds of {{users.currently.windSpeed}} MPH.
-  <div *ngIf="users.alerts; else NoAlerts"> 
-    <h2>Alerts</h2>{{users.alerts[0].title}}<br>{{users.alerts[0].severity}}
+  <div *ngIf="users.alerts; else NoAlerts" class="redalert"> 
+    <h1>Alerts</h1><h3>{{users.alerts[0].severity}}</h3><h3>{{users.alerts[0].title}}</h3>
   </div>
   <ng-template #NoAlerts>
         <h2>No Alerts at this time</h2>
@@ -30,8 +30,7 @@
       </ul>
     </div>
   </div>
-  <!--<span *ngFor="let week of weeklyArray; let i = index">Day{{i + 1}} Low: {{week.temperatureMin}}&nbsp;</span><br>
-  <span *ngFor="let week of weeklyArray; let i = index">Day{{i + 1}} Rain: {{week.precipProbability}}&nbsp;</span> -->
+  <h2>Rain Probability Next 48 Hours</h2>
   <ul>
     <li *ngFor="let hourly of hourlyArray; let i = index"><span *ngIf="hourly.precipProbability > 0; else nottraining">{{hourly.precipProbability * 100 | number: '1.0-0'}}&#37; of {{hourly.summary}} in {{i + 1}} hours.</span></li>
   </ul>

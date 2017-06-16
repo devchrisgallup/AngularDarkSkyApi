@@ -13,6 +13,7 @@ export class ContentComponent implements OnInit {
   public rainByTheMinute = false; 
   public hourlyArray; 
   public weeklyArray; 
+  public alert; 
   public lat; 
   public long; 
   public dayDate; 
@@ -29,7 +30,6 @@ export class ContentComponent implements OnInit {
     this.monthDate = this.getD.getMonth() + 1; 
     this.dayDate = this.getD.getDate();
     this.yearDate = this.getD.getFullYear(); 
-    
   }
 
   setPosition(position) {

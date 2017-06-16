@@ -7,3 +7,11 @@
     width: 100%; 
     margin: 0 auto; 
 }
+
+.redalert {
+    color: red;
+    background-color: #ffffff; 
+    width: 100%; 
+    padding: 0; 
+    margin: 0; 
+}

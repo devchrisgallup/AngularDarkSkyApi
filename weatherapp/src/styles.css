@@ -5,8 +5,9 @@ html, body {
 }
 
 /* fix scroll bar overflow */
-html {
-    overflow-y: scroll;
+html, body {
+    padding: 0; 
+    margin: 0; 
 }
 
 button {
