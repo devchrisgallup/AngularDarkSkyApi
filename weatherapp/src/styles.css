@@ -23,8 +23,8 @@ button {
 ul li {
     list-style: none; 
     text-align: left; 
-    margin: 0 auto; 
-    width: 22%; 
+    /*margin: 0 auto; 
+    width: 22%; */
 }
 
 button:active {
@@ -35,7 +35,7 @@ button:active {
     text-align: center; 
 }
 
-@media only screen and (max-width: 600px) {
+/*@media only screen and (max-width: 600px) {
     ul li {
         width: 100%; 
         text-align: center; 
@@ -48,4 +48,4 @@ button:active {
         text-align: left; 
         margin-left: -10%;
     }   
-}
+}*/

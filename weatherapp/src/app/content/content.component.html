@@ -6,9 +6,9 @@
 </div>
 <h1>{{monthDate}}/{{dayDate}}/{{yearDate}}</h1>
 <div *ngIf="users">
-  <h2>Current Temperature</h2> {{users.currently.temperature}} &#8457;
-  <h2>High Temperature</h2> {{users.daily.data[0].temperatureMax}} &#8457;
-  <h2>Low Temperature</h2> {{users.daily.data[0].temperatureMin}} &#8457;
+  <h2>Current Temperature</h2> {{users.currently.temperature}}&#8457;
+  <h2>High Temperature</h2> {{users.daily.data[0].temperatureMax}}&#8457;
+  <h2>Low Temperature</h2> {{users.daily.data[0].temperatureMin}}&#8457;
   <h4>Summary</h4> {{users.hourly.summary}} Wind speeds of {{users.currently.windSpeed}} MPH.
   <div *ngIf="users.alerts; else NoAlerts" class="redalert"> 
     <h1>Alerts</h1><h3>{{users.alerts[0].severity}}</h3><h3>{{users.alerts[0].title}}</h3>
@@ -24,16 +24,18 @@
   <div class="center">
     <div class="min">
       <ul *ngFor="let week of weeklyArray; let i = index">
-        <li>Day{{i + 1}} Hi: {{week.temperatureMax}}</li>
-        <li>Low: {{week.temperatureMin}}</li>
-        <li>Rain: {{week.precipProbability}}</li><br>
+        <li><span class="eightday">Day{{i + 1}}</span> Hi: {{week.temperatureMax}}&#8457;</li>
+        <li>Low: {{week.temperatureMin}}&#8457;</li>
+        <li>{{week.precipProbability * 100 | number : '1.0-2'}}&#37; chance of rain</li><br>
       </ul>
     </div>
   </div>
   <h2>Rain Probability Next 48 Hours</h2>
-  <ul>
-    <li *ngFor="let hourly of hourlyArray; let i = index"><span *ngIf="hourly.precipProbability > 0; else nottraining">{{hourly.precipProbability * 100 | number: '1.0-0'}}&#37; of {{hourly.summary}} in {{i + 1}} hours.</span></li>
-  </ul>
+  <div class="centertext">
+    <ul>
+      <li *ngFor="let hourly of hourlyArray; let i = index"><span *ngIf="hourly.precipProbability > 0; else nottraining">{{hourly.precipProbability * 100 | number: '1.0-0'}}&#37; of {{hourly.summary}} in {{i + 1}} hours.</span></li>
+    </ul>
+  </div>
   <ng-template #nottraining>
   </ng-template>
   <h2 *ngIf="isNoRain">YES! No Rain today!</h2>

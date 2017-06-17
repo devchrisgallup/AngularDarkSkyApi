@@ -1,11 +1,16 @@
 .min ul li {
     display: inline-block;
-    width: 10%; 
+    width: 12%; 
 }
 
 .center {
     width: 100%; 
     margin: 0 auto; 
+}
+
+.centertext ul li {
+    margin: 0 auto; 
+    width: 22%; 
 }
 
 .redalert {
@@ -14,4 +19,9 @@
     width: 100%; 
     padding: 0; 
     margin: 0; 
+}
+
+.eightday {
+    Color: #ffffff; 
+    font-size: 1.3rem; 
 }
