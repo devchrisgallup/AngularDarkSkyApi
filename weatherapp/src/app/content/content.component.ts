@@ -44,7 +44,7 @@ export class ContentComponent implements OnInit {
 
   processData() {
     this.weeklyArray = this.users.daily.data; 
-    console.log(this.weeklyArray); 
+    console.log(this.users); 
     let counter = 0; 
     this.hourlyArray = this.users.hourly.data; 
     // this.weekArray = this.users. 
