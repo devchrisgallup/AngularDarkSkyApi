@@ -22,6 +22,11 @@
 }
 
 .eightday {
-    Color: #ffffff; 
+    Color: slategray; 
     font-size: 1.3rem; 
+    text-shadow:
+    -1px -1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
 }
