@@ -6,7 +6,9 @@
 </div>
 <div *ngIf="rainByTheMinute">
   <h2>{{users.minutely.summary}}</h2>
-  <ul>
-    <li *ngFor="let data of minnutelyArray; let i = index">{{data.precipProbability * 100 | number : '1.2-2'}} &#37; chance of rain {{i + 1}} minutess.</li>
-  </ul>
+  <div class="centertext">
+    <ul>
+      <li *ngFor="let data of minnutelyArray; let i = index">{{data.precipProbability * 100 | number : '1.2-2'}} &#37; chance of rain {{i + 1}} minutess.</li>
+    </ul>
+  </div>
 </div>
