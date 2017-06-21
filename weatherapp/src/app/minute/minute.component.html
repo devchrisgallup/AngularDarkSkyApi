@@ -8,7 +8,7 @@
   <h2>{{users.minutely.summary}}</h2>
   <div class="centertext">
     <ul>
-      <li *ngFor="let data of minnutelyArray; let i = index">{{data.precipProbability * 100 | number : '1.2-2'}} &#37; chance of rain {{i + 1}} minutess.</li>
+      <li *ngFor="let data of minnutelyArray; let i = index">{{data.precipProbability * 100 | number : '1.2-2'}} &#37; chance of rain in {{i + 1}} minutes.</li>
     </ul>
   </div>
 </div>

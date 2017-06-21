@@ -24,7 +24,8 @@
   <div class="center">
     <div class="min">
       <ul *ngFor="let week of weeklyArray; let i = index">
-        <li><span class="eightday">Day{{i + 1}}</span> Hi: {{week.temperatureMax}}&#8457;</li>
+        <li><span class="eightday">Day{{i + 1}}</span></li>
+        <li>Hi: {{week.temperatureMax}}&#8457;</li>
         <li>Low: {{week.temperatureMin}}&#8457;</li>
         <li>{{week.precipProbability * 100 | number : '1.0-2'}}&#37; chance of rain</li><br>
       </ul>

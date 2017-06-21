@@ -30,3 +30,10 @@
     -1px 1px 0 #ffffff,
     1px 1px 0 #ffffff;
 }
+
+@media only screen and (max-width: 600px) {
+    .min ul li {
+        display: inline-block;
+        width: 25%; 
+    }
+}
