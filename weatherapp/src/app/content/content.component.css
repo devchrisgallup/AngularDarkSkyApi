@@ -36,4 +36,7 @@
         display: inline-block;
         width: 25%; 
     }
+    .centertext ul li {
+        width: 100%; 
+    }
 }
