@@ -3,6 +3,15 @@ ul {
     width: 100%;  
 }
 
+.red {
+    color: red;
+    text-shadow:
+    -0.5px -0.5px 0 #ffffff,
+    0.5px -0.5px 0 #ffffff,
+    -0.5px 0.5px 0 #ffffff,
+    0.5px 0.5px 0 #ffffff;
+}
+
 .min ul li {
     display: inline-block;
     width: auto;
