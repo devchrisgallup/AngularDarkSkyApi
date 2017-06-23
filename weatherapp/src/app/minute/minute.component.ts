@@ -13,6 +13,7 @@ export class MinuteComponent implements OnInit {
   public users;  
   public lat; 
   public long;
+  public hidelist = false; 
   constructor(private service: TvService) { }
 
   ngOnInit() {
@@ -35,6 +36,10 @@ export class MinuteComponent implements OnInit {
   processData() {
     // weather by the minute array
     this.minnutelyArray = this.users.minutely.data; 
+    if (this.users.minutely.summary == 'Clear for the hour.') {
+      this.hidelist = true; 
+    }
+    console.log(this.users.minutely.summary); 
     // flag to show div
     if (!this.rainByTheMinute) {
       this.rainByTheMinute = true; 

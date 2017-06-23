@@ -1,6 +1,11 @@
+ul {
+    padding: 0;
+    width: 100%;  
+}
+
 .min ul li {
     display: inline-block;
-    width: 12%; 
+    width: auto;
 }
 
 .center {
@@ -9,8 +14,7 @@
 }
 
 .centertext ul li {
-    margin: 0 auto; 
-    width: 22%; 
+    text-align: center; 
 }
 
 .redalert {
@@ -34,9 +38,15 @@
 @media only screen and (max-width: 600px) {
     .min ul li {
         display: inline-block;
-        width: 25%; 
+        /* width auto for ul li mobile device */
+        width: auto; 
+        margin: 0; 
+        padding: 0; 
     }
     .centertext ul li {
         width: 100%; 
+        padding: 0; 
+        margin: 0; 
     }
 }
+
