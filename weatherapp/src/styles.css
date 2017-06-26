@@ -10,6 +10,10 @@ html, body {
     margin: 0; 
 }
 
+html {
+    overflow-y: scroll; 
+}
+
 button {
     border-radius: 95px; 
     background-color: #37a9ef;
