@@ -36,10 +36,16 @@ export class MinuteComponent implements OnInit {
   processData() {
     // weather by the minute array
     this.minnutelyArray = this.users.minutely.data; 
-    if (this.users.minutely.summary == 'Clear for the hour.') {
-      this.hidelist = true; 
+    var count = 0; 
+    for (let i = 0; i < this.users.minutely.data.length; i++) {
+      if (this.users.minutely.data[i].precipProbability == 0) {
+        count++; 
+      }
     }
-    console.log(this.users.minutely.summary); 
+    console.log(this.users.minutely); 
+    if (count == this.users.minutely.data.length) {
+        this.hidelist = true; 
+    }
     // flag to show div
     if (!this.rainByTheMinute) {
       this.rainByTheMinute = true; 
