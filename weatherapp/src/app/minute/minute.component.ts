@@ -34,15 +34,18 @@ export class MinuteComponent implements OnInit {
   }
 
   processData() {
-    // weather by the minute array
+    // assign the response data from the http request
     this.minnutelyArray = this.users.minutely.data; 
     var count = 0; 
+    // count the number of times that 0 occurs 
+    // in the precipProbability of the minutely Array
     for (let i = 0; i < this.users.minutely.data.length; i++) {
       if (this.users.minutely.data[i].precipProbability == 0) {
         count++; 
       }
     }
-    console.log(this.users.minutely); 
+    // if the previous count equals the length of the Array
+    // then hidelist with a flag because rain probability is zero
     if (count == this.users.minutely.data.length) {
         this.hidelist = true; 
     }

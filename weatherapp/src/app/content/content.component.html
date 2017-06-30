@@ -1,15 +1,21 @@
+<!--flag to toggle button-->
 <div *ngIf="!rainByTheMinute">
   <button (click)="processData()">Show Rain Probability</button>
 </div>
 <div *ngIf="rainByTheMinute">
   <button (click)="processData()">Hide Rain Probability</button>
 </div>
+<!--display current date-->
 <h1>{{monthDate}}/{{dayDate}}/{{yearDate}}</h1>
+<!--Display the Current, high, and low temperature for the current date
+Display the UV Index and if that index is over 5 inform users to wear sunscrean 
+   -uses an *ngIf-->
 <div *ngIf="users">
   <h2>Current Temperature</h2> {{users.currently.temperature}}&#8457; <br> UV Index {{users.currently.uvIndex}} <br> <span class="red" *ngIf="users.currently.uvIndex > 5">PLEASE WEAR SUNSCREAN</span>
   <h2>High Temperature</h2> {{users.daily.data[0].temperatureMax}}&#8457;
   <h2>Low Temperature</h2> {{users.daily.data[0].temperatureMin}}&#8457;
   <h4>Summary</h4> {{users.hourly.summary}} Wind speeds of {{users.currently.windSpeed}} MPH.
+  <!--Check for alerts to display else display #NoAlerts ng-template-->
   <div *ngIf="users.alerts; else NoAlerts" class="redalert"> 
     <h1>Alerts</h1><h3>{{users.alerts[0].severity}}</h3><h3>{{users.alerts[0].title}}</h3>
   </div>
@@ -17,7 +23,8 @@
         <h4>No Alerts at this time</h4>
   </ng-template>
 </div>
-
+<!--display Hi, Low, and precipProbability 
+for the next 8 days-->
 <div *ngIf="rainByTheMinute">
   <h1>8 Day Forecast</h1>
   <div class="leftAlign"> 
@@ -31,6 +38,7 @@
       </ul>
     </div>
   </div>
+  <!--Display the rain precipProbability for the next 48 hours-->
   <h2>Rain Probability Next 48 Hours</h2>
   <div class="centertext">
     <ul>

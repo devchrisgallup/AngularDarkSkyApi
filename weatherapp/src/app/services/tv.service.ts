@@ -12,6 +12,7 @@ export class TvService {
     }
     // get data
     getData(lat, long) {
+        // http get request
         this.dataUrl = 'https://chrisgalluptest.info/a/weather.php?lat=' + lat + '&long=' + long;
         return this.http.get(this.dataUrl)
         .map(data => data.json());  

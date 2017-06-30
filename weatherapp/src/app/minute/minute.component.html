@@ -1,9 +1,11 @@
+<!--flag to toggle button-->
 <div *ngIf="!rainByTheMinute">
   <button (click)="processData()">Show 60 Minutes</button>
 </div>
 <div *ngIf="rainByTheMinute">
   <button (click)="processData()">Hide 60 Minutes</button>
 </div>
+<!--Display rain by the minute-->
 <div *ngIf="rainByTheMinute">
   <h2>{{users.minutely.summary}}</h2>
   <div class="centertext" *ngIf="!hidelist">
