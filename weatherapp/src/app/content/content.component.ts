@@ -45,6 +45,7 @@ export class ContentComponent implements OnInit {
   processData() {
     // assign the response data from the http request
     this.weeklyArray = this.users.daily.data; 
+    console.log(this.weeklyArray); 
     let counter = 0; 
    // assign the response data from the http request
     this.hourlyArray = this.users.hourly.data; 
