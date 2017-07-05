@@ -34,6 +34,7 @@ for the next 8 days-->
         <li><span class="eightday">Day{{i + 1}}</span></li><br>
         <li>Hi: {{week.temperatureMax}}&#8457;</li><br>
         <li>Low: {{week.temperatureMin}}&#8457;</li><br>
+        <li>Wind Speed of {{week.windSpeed}} MPH</li><br>
         <li>{{week.cloudCover * 100 | number : '1.0-2'}}&#37; cloudy</li><br>
         <li>{{week.precipProbability * 100 | number : '1.0-2'}}&#37; chance of rain</li><br>
         <li>{{week.summary}}</li><br>
