@@ -24,12 +24,12 @@ export class ContentComponent implements OnInit {
 
 
   ngOnInit() {
-    if(navigator.geolocation){
+      this.monthDate = this.getD.getMonth() + 1; 
+      this.dayDate = this.getD.getDate();
+      this.yearDate = this.getD.getFullYear(); 
+      if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
       }
-    this.monthDate = this.getD.getMonth() + 1; 
-    this.dayDate = this.getD.getDate();
-    this.yearDate = this.getD.getFullYear(); 
   }
 
   setPosition(position) {

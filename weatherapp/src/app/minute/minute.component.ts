@@ -20,7 +20,6 @@ export class MinuteComponent implements OnInit {
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
       }
-
   }
 
   setPosition(position) {
